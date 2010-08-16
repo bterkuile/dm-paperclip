@@ -16,7 +16,14 @@ end
 ROOT       = File.join(File.dirname(__FILE__), '..')
 RAILS_ROOT = ROOT
 RAILS_ENV  = ENV['RAILS_ENV']
-
+class Rails
+  def self.root
+    ROOT
+  end
+  def self.env
+    'test'
+  end
+end
 Object.const_set("Merb", Class.new())
 Merb.class_eval do
   def self.root
